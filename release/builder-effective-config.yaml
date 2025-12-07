@@ -1,0 +1,35 @@
+directories:
+  output: release
+  buildResources: build
+appId: com.mcbeeee.app
+productName: MCBeeee
+files:
+  - filter:
+      - dist/**/*
+      - dist-electron/**/*
+      - public/logo.png
+      - public/icon.icns
+mac:
+  category: public.app-category.developer-tools
+  target:
+    - target: dmg
+      arch:
+        - x64
+        - arm64
+  icon: public/icon.icns
+dmg:
+  title: MCBeeee Installer
+  icon: public/icon.icns
+  background: null
+  window:
+    width: 540
+    height: 380
+  contents:
+    - x: 140
+      'y': 180
+      type: file
+    - x: 400
+      'y': 180
+      type: link
+      path: /Applications
+electronVersion: 30.5.1
