@@ -308,7 +308,7 @@ export default function App() {
                             {/* Claude Desktop Config */}
                             <div className="bg-black/40 border border-white/10 rounded-lg p-4 group hover:border-amber-600/30 transition-all cursor-pointer"
                                 onClick={() => {
-                                    const bridgePath = "/Users/cmo/Documents/PROJELER/FILEAGENT_MCP/bridge.js";
+                                    const bridgePath = "/path/to/bridge.js";
                                     const config = {
                                         "mcpServers": {
                                             "mcbeeee": {
