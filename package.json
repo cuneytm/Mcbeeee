@@ -4,6 +4,10 @@
   "version": "1.0.0",
   "description": "Secure Agentic Gateway for AI File System Access",
   "author": "Cuneyt M.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cuneytm/Mcbeeee.git"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
