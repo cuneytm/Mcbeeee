@@ -18,6 +18,14 @@ A beautiful, secure desktop application that provides controlled file system acc
 
 ---
 
+
+## 📸 Screenshots
+
+| **Secure Dashboard** | **Easy Configuration** |
+|:---:|:---:|
+| <img src="assets/screenshots/dashboard.png" width="400" alt="Dashboard" /> | <img src="assets/screenshots/config.png" width="400" alt="Configuration" /> |
+| *Manage Access & Security* | *One-Click Config Copying* |
+
 ## 📥 Download
 
 ### Latest Release (v1.0.2)
