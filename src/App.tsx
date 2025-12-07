@@ -109,6 +109,13 @@ export default function App() {
         }
     };
 
+    const [showOnboarding, setShowOnboarding] = useState(() => !localStorage.getItem('mcbeeee_welcome_v1'));
+
+    const handleOnboardingComplete = () => {
+        localStorage.setItem('mcbeeee_welcome_v1', 'true');
+        setShowOnboarding(false);
+    };
+
     return (
         <div className="min-h-screen bg-background text-gray-200 p-8 font-sans selection:bg-amber-500/30">
             <header className="mb-8 flex items-center justify-between">
@@ -409,6 +416,65 @@ export default function App() {
                                         <CheckCircle2 className="w-4 h-4" /> Approve
                                     </Button>
                                 </div>
+                            </div>
+                        </motion.div>
+                    </div>
+                )}
+            </AnimatePresence>
+
+            {/* Onboarding Modal */}
+            <AnimatePresence>
+                {showOnboarding && (
+                    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-4">
+                        <motion.div
+                            initial={{ y: 20, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            exit={{ y: -20, opacity: 0 }}
+                            className="bg-surface border border-amber-500/20 rounded-2xl p-8 w-full max-w-2xl shadow-2xl shadow-amber-500/5"
+                        >
+                            <div className="text-center mb-8">
+                                <motion.div
+                                    initial={{ scale: 0 }}
+                                    animate={{ scale: 1 }}
+                                    transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.2 }}
+                                    className="w-24 h-24 rounded-3xl bg-white mx-auto mb-6 flex items-center justify-center shadow-lg shadow-amber-500/20"
+                                >
+                                    <img src={logoImage} alt="MCBeeee Logo" className="w-20 h-20 object-contain" />
+                                </motion.div>
+                                <h2 className="text-3xl font-bold text-white mb-2">Welcome to MCBeeee</h2>
+                                <p className="text-gray-400 max-w-md mx-auto">
+                                    Your secure gateway for allowing AI agents to work with your local files.
+                                </p>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                                <div className="bg-white/5 p-4 rounded-xl border border-white/5 text-center">
+                                    <FolderOpen className="w-8 h-8 text-amber-500 mx-auto mb-3" />
+                                    <h3 className="font-semibold text-white mb-1">1. Choose Folder</h3>
+                                    <p className="text-xs text-gray-500">Select which directory AI can access. It can't see anything else.</p>
+                                </div>
+                                <div className="bg-white/5 p-4 rounded-xl border border-white/5 text-center">
+                                    <Terminal className="w-8 h-8 text-blue-400 mx-auto mb-3" />
+                                    <h3 className="font-semibold text-white mb-1">2. Connect AI</h3>
+                                    <p className="text-xs text-gray-500">Copy the config to VS Code or Claude Desktop setup.</p>
+                                </div>
+                                <div className="bg-white/5 p-4 rounded-xl border border-white/5 text-center">
+                                    <CheckCircle2 className="w-8 h-8 text-green-400 mx-auto mb-3" />
+                                    <h3 className="font-semibold text-white mb-1">3. Approve</h3>
+                                    <p className="text-xs text-gray-500">Review and approve every file operation request.</p>
+                                </div>
+                            </div>
+
+                            <div className="flex flex-col items-center gap-4">
+                                <Button
+                                    onClick={handleOnboardingComplete}
+                                    className="w-full max-w-sm py-3 text-lg justify-center bg-amber-500 hover:bg-amber-600 text-white shadow-lg shadow-amber-500/20"
+                                >
+                                    Get Started
+                                </Button>
+                                <p className="text-[10px] text-gray-600">
+                                    By using MCBeeee, you agree to grant controlled filesystem access to AI agents.
+                                </p>
                             </div>
                         </motion.div>
                     </div>
