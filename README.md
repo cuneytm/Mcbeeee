@@ -20,14 +20,15 @@ A beautiful, secure desktop application that provides controlled file system acc
 
 ## 📥 Download
 
-### Latest Release (v0.0.0)
+### Latest Release (v1.0.0)
 
 Choose the version for your Mac:
 
-| Platform | Download Link | Size |
-|----------|--------------|------|
-| **Apple Silicon** (M1/M2/M3) | [MCBeeee-0.0.0-arm64.dmg](https://github.com/cuneytm/Mcbeeee/raw/main/release/MCBeeee-0.0.0-arm64.dmg) | 103 MB |
-| **Intel** (x64) | [MCBeeee-0.0.0.dmg](https://github.com/cuneytm/Mcbeeee/raw/main/release/MCBeeee-0.0.0.dmg) | 108 MB |
+| Platform | Download Link |
+|----------|--------------|
+| **Apple Silicon** (M1/M2/M3) | [Download for Apple Silicon](https://github.com/cuneytm/Mcbeeee/releases/download/v1.0.0/MCBeeee-1.0.0-arm64.dmg) |
+| **Intel** (x64) | [Download for Intel Mac](https://github.com/cuneytm/Mcbeeee/releases/download/v1.0.0/MCBeeee-1.0.0.dmg) |
+
 
 ### Installation
 
