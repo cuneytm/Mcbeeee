@@ -35,8 +35,15 @@ Choose the version for your Mac:
 1. Download the appropriate DMG file for your Mac
 2. Open the DMG file
 3. Drag **MCBeeee** to your Applications folder
-4. Right-click the app and select "Open" (first time only, due to unsigned app)
+4. Right-click the app and select "Open" (first time only)
 5. Grant notification permissions when prompted
+
+> **⚠️ "App is damaged" Error?**
+>
+> If macOS says the app is "damaged/can't be opened", run this command in Terminal to bypass Gatekeeper (required for unsigned apps):
+> ```bash
+> xattr -cr /Applications/MCBeeee.app
+> ```
 
 ---
 
