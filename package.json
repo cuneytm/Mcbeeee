@@ -1,7 +1,9 @@
 {
-  "name": "y",
+  "name": "mcbeeee",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Secure Agentic Gateway for AI File System Access",
+  "author": "Cuneyt M.",
   "type": "module",
   "scripts": {
     "dev": "vite",

@@ -264,14 +264,20 @@ export default function App() {
                             {/* VS Code Config */}
                             <div className="bg-black/40 border border-white/10 rounded-lg p-4 group hover:border-blue-500/30 transition-all cursor-pointer"
                                 onClick={() => {
-                                    const config = {
-                                        "mcpServers": {
+                                    const config: any = {
+                                        "servers": {
                                             "mcbeeee": {
-                                                "url": `http://localhost:${state.config.port}/sse`,
-                                                "apiKey": state.config.apiKey
+                                                "type": "sse",
+                                                "url": `http://localhost:${state.config.port}/sse`
                                             }
                                         }
                                     };
+                                    // Only add headers if API key is set
+                                    if (state.config.apiKey) {
+                                        config.servers.mcbeeee.headers = {
+                                            "Authorization": state.config.apiKey
+                                        };
+                                    }
                                     navigator.clipboard.writeText(JSON.stringify(config, null, 2));
                                 }}
                             >
@@ -282,8 +288,12 @@ export default function App() {
                                 <div className="text-xs text-gray-400 mb-2">Click to copy config</div>
                                 <div className="bg-black/60 rounded p-2 border border-white/5">
                                     <div className="text-[10px] text-gray-500 mb-1">Config file location:</div>
-                                    <div className="text-xs text-amber-400 font-mono break-all">
-                                        ~/.vscode/mcp.json
+                                    <div className="text-xs text-amber-400 font-mono break-all leading-relaxed">
+                                        ${'{PROJECT_FOLDER}'}/.vscode/mcp.json
+                                    </div>
+                                    <div className="text-[10px] text-gray-500 mt-2 mb-1">or for global:</div>
+                                    <div className="text-xs text-amber-400 font-mono break-all leading-relaxed">
+                                        $HOME/Library/Application Support/Code/User/mcp.json
                                     </div>
                                 </div>
                             </div>

@@ -91,9 +91,25 @@ Open the app and click **Start Server** to begin.
 #### For VS Code:
 
 1. Click the **VS Code** card in MCBeeee to copy the configuration
-2. Open: `~/.vscode/mcp.json`
-3. Paste the configuration
+2. Create/Open the config file:
+   - **Project-specific**: `${PROJECT_FOLDER}/.vscode/mcp.json`
+   - **Global**: `$HOME/Library/Application Support/Code/User/mcp.json`
+   ```json
+   {
+     "servers": {
+       "mcbeeee": {
+         "type": "sse",
+         "url": "http://localhost:3000/sse",
+         "headers": {
+           "Authorization": "YOUR_API_KEY"
+         }
+       }
+     }
+   }
+   ```
+   (Remove the "headers" section if you haven't set an API key)
 4. Restart VS Code
+
 
 ### 3. Set Allowed Directory
 
